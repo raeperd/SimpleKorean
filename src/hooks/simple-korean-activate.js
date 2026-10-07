@@ -7,14 +7,14 @@ const path = require('node:path');
 // written to a file and replaced by a preview, which defeats the hook.
 const MAX_CHARS = 9500;
 
-const FALLBACK_CONTEXT = `SIMPLE ENGLISH SKILL ACTIVE AUTOMATICALLY
+const FALLBACK_CONTEXT = `SIMPLE KOREAN SKILL ACTIVE AUTOMATICALLY
 
 Apply ASD-STE100 Simplified Technical English to technical-writing tasks. Use short sentences, active voice, one term for one meaning, and conditions before commands. Do not change code, identifiers, commands, or quoted errors.`;
 
 const HEADER = [
-  'SIMPLE ENGLISH SKILL ACTIVE AUTOMATICALLY',
+  'SIMPLE KOREAN SKILL ACTIVE AUTOMATICALLY',
   '',
-  'Follow these writing rules without waiting for the user to name the skill. The full skill, with the rule catalog and the check mode, is at skills/simple-english/SKILL.md in this plugin. Read it for a compliance check or for strict mode.',
+  'Follow these writing rules without waiting for the user to name the skill. The full skill, with the rule catalog and the check mode, is at skills/simple-korean/SKILL.md in this plugin. Read it for a compliance check or for strict mode.',
   '',
 ].join('\n');
 
@@ -66,7 +66,7 @@ function buildContext(promptText) {
   }
   const out = HEADER + ruleBlock(stripFrontmatter(promptText)).trim();
   if (out.length > MAX_CHARS) {
-    process.stderr.write(`simple-english hook: payload is ${out.length} characters, over the ${MAX_CHARS} cap; sending the fallback ruleset\n`);
+    process.stderr.write(`simple-korean hook: payload is ${out.length} characters, over the ${MAX_CHARS} cap; sending the fallback ruleset\n`);
     return FALLBACK_CONTEXT;
   }
   return out;

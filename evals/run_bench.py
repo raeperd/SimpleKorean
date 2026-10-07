@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Benchmark the simple-english skill across models.
+"""Benchmark the simple-korean skill across models.
 
 For each model x condition x scenario, runs a headless `claude -p` call,
 lints the output with ste_lint.py, and aggregates to results.json +
@@ -28,7 +28,7 @@ import time
 import ste_lint
 
 HERE = pathlib.Path(__file__).resolve().parent
-SKILL = HERE.parent / "skills" / "simple-english" / "SKILL.md"
+SKILL = HERE.parent / "skills" / "simple-korean" / "SKILL.md"
 RESULTS = HERE / "results"
 RAW = RESULTS / "raw"
 MODELS = [

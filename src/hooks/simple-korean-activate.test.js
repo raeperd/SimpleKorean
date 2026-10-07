@@ -12,9 +12,9 @@ const {
   promptCandidates,
   readFirstFile,
   stripFrontmatter,
-} = require('./simple-english-activate');
+} = require('./simple-korean-activate');
 
-const SCRIPT = path.join(__dirname, 'simple-english-activate.js');
+const SCRIPT = path.join(__dirname, 'simple-korean-activate.js');
 const REPO_PROMPT = path.join(__dirname, '..', '..', 'prompts', 'system-prompt.md');
 
 function tmpRoot(promptText) {
@@ -82,7 +82,7 @@ test('the shipped prompt fits under the Claude Code stdout cap', () => {
   assert.ok(!out.includes('Standalone system prompt'), 'the page title leaked');
   assert.ok(!out.includes('Word-budget'), 'the word-budget section leaked');
   assert.ok(!out.includes('paste this block'), 'the packaging paragraph leaked');
-  assert.ok(out.startsWith('SIMPLE ENGLISH SKILL ACTIVE AUTOMATICALLY'));
+  assert.ok(out.startsWith('SIMPLE KOREAN SKILL ACTIVE AUTOMATICALLY'));
 });
 
 test('an oversized prompt falls back instead of getting cut mid-sentence', () => {

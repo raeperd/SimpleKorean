@@ -1,4 +1,4 @@
-"""Benchmark the simple-english skill through isolated Pi CLI calls.
+"""Benchmark the simple-korean skill through isolated Pi CLI calls.
 
 For each model, condition, and scenario, this script runs a headless `pi -p`
 call. It lints each final response with ste_lint.py and writes resumable raw
@@ -21,7 +21,7 @@ import time
 import ste_lint
 
 HERE = pathlib.Path(__file__).resolve().parent
-SKILL_PATH = HERE.parent / "skills" / "simple-english" / "SKILL.md"
+SKILL_PATH = HERE.parent / "skills" / "simple-korean" / "SKILL.md"
 SCENARIOS_PATH = HERE / "scenarios.json"
 DEFAULT_RESULTS_DIRECTORY = HERE / "results" / "pi"
 CONDITIONS = ("baseline", "skill")
@@ -32,7 +32,7 @@ INTER_CALL_DELAY_SECONDS = 2
 
 
 def build_benchmark_prompt(scenario, condition, skill_text):
-    """Build the existing baseline or simple-english skill benchmark prompt."""
+    """Build the existing baseline or simple-korean skill benchmark prompt."""
     if condition == "baseline":
         return scenario["prompt"]
     if condition != "skill":

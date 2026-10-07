@@ -1,5 +1,5 @@
 ---
-name: simple-english
+name: simple-korean
 description: |
   Write or rewrite text in plain, layman-readable English in the spirit of
   ASD-STE100 Simplified Technical English: short sentences, active voice,
@@ -20,7 +20,7 @@ metadata:
   standard: ASD-STE100 Issue 9 (2025-01-15)
 ---
 
-# Simple English
+# Simple Korean
 
 Write plain English that a smart reader outside your field understands on one read. The rules come from ASD-STE100, the controlled language that aerospace uses for maintenance manuals. Two registers exist: the document you write or rewrite, and the reply you type in chat. Each has its own short rule set below.
 

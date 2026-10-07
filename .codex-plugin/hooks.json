@@ -1,5 +1,5 @@
 {
-  "description": "Load Simple English rules automatically for each Codex session.",
+  "description": "Load Simple Korean rules automatically for each Codex session.",
   "hooks": {
     "SessionStart": [
       {
@@ -7,9 +7,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"${PLUGIN_ROOT}\" ] && node \"${PLUGIN_ROOT}/src/hooks/simple-english-activate.js\" || true",
+            "command": "[ -n \"${PLUGIN_ROOT}\" ] && node \"${PLUGIN_ROOT}/src/hooks/simple-korean-activate.js\" || true",
             "timeout": 5,
-            "statusMessage": "Loading Simple English...",
+            "statusMessage": "Loading Simple Korean...",
             "additionalContextLimit": 0
           }
         ]

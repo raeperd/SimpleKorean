@@ -1,11 +1,11 @@
 {
-  "name": "simple-english",
+  "name": "simple-korean",
   "interface": {
-    "displayName": "Simple English"
+    "displayName": "Simple Korean"
   },
   "plugins": [
     {
-      "name": "simple-english",
+      "name": "simple-korean",
       "source": {
         "source": "local",
         "path": "./"

@@ -7,7 +7,7 @@ each hit (capped at MAX_HOOK_HITS) to stderr and exit 2 so the model sees
 it. Exit 2 on PostToolUse is advisory: the tool already ran. Agent-internal
 Markdown, such as memory files under the Claude configuration directory, is
 skipped. The writing rules do not govern it, and a summary of its
-violations only spends tokens. Set SIMPLE_ENGLISH_LINT_EXCLUDE to skip more
+violations only spends tokens. Set SIMPLE_KOREAN_LINT_EXCLUDE to skip more
 paths.
 
 Stop: read `last_assistant_message`, check the reply register (no headers,
@@ -62,7 +62,7 @@ def variants(path):
 def excluded(target):
     """True for agent-internal Markdown and for the paths the user excludes."""
     config_dirs = variants(absolute(os.environ.get("CLAUDE_CONFIG_DIR") or f"~/{CLAUDE_DIR}"))
-    raw = os.environ.get("SIMPLE_ENGLISH_LINT_EXCLUDE", "").split(os.pathsep)
+    raw = os.environ.get("SIMPLE_KOREAN_LINT_EXCLUDE", "").split(os.pathsep)
     patterns = [os.path.expanduser(p) for p in raw if p]
     for form in variants(target):
         if CLAUDE_DIR in form.parts or any(form.is_relative_to(d) for d in config_dirs):
@@ -90,7 +90,7 @@ def post_tool_use(event):
     if not report["violations_total"]:
         return 0
     detail = lint.lint_detail(text, "descriptive")
-    lines = [f"simple-english: {target.name} has {report['violations_total']} STE violations."]
+    lines = [f"simple-korean: {target.name} has {report['violations_total']} STE violations."]
     for h in detail[:MAX_HOOK_HITS]:
         lines.append(f"  line {h['line']}, {h['category']}: {h['text']}")
     if len(detail) > MAX_HOOK_HITS:
@@ -117,7 +117,7 @@ def stop(event):
     if CLOSERS.search(reply):
         problems.append("a filler closer")
     if problems:
-        print(json.dumps({"systemMessage": "simple-english reply check: " + "; ".join(problems) + ". Answer in prose."}))
+        print(json.dumps({"systemMessage": "simple-korean reply check: " + "; ".join(problems) + ". Answer in prose."}))
     return 0
 
 

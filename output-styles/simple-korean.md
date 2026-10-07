@@ -1,5 +1,5 @@
 ---
-name: simple-english
+name: simple-korean
 description: Write all prose in plain English in the spirit of ASD-STE100 Simplified Technical English
 keep-coding-instructions: true
 ---

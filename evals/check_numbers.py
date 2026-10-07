@@ -10,7 +10,7 @@ Checks:
 - README benchmark numbers against evals/results/rebuild-2026-09-02/ (replies,
   judge, gpt-4.1-mini, documents) and against evals/results/results.json.
 - The rebuild RESULTS.md pooled-defect sentence.
-- The rule block: prompts/system-prompt.md and output-styles/simple-english.md
+- The rule block: prompts/system-prompt.md and output-styles/simple-korean.md
   carry the same text, and SKILL.md carries the same reply rules.
 - The version string in SKILL.md, the three manifests, and the README badge.
 """
@@ -100,11 +100,11 @@ def rule_block(text):
 
 def sync():
     prompt = rule_block((ROOT / "prompts" / "system-prompt.md").read_text(encoding="utf-8"))
-    style = (ROOT / "output-styles" / "simple-english.md").read_text(encoding="utf-8")
+    style = (ROOT / "output-styles" / "simple-korean.md").read_text(encoding="utf-8")
     style = re.sub(r"^---\n.*?\n---\n", "", style, count=1, flags=re.S).strip()
     if prompt != style:
-        problems.append("rule block differs between prompts/system-prompt.md and output-styles/simple-english.md")
-    skill = (ROOT / "skills" / "simple-english" / "SKILL.md").read_text(encoding="utf-8")
+        problems.append("rule block differs between prompts/system-prompt.md and output-styles/simple-korean.md")
+    skill = (ROOT / "skills" / "simple-korean" / "SKILL.md").read_text(encoding="utf-8")
     for phrase in ("Answer in prose", "No em-dashes", "No contractions", "first sentence gives the answer",
                    "Condition before command", "make sure that", "Never touch"):
         for name, text in (("SKILL.md", skill), ("prompts/system-prompt.md", prompt)):
@@ -114,7 +114,7 @@ def sync():
 
 def versions():
     v = {}
-    v["SKILL.md"] = re.search(r'version: "([^"]+)"', (ROOT / "skills/simple-english/SKILL.md").read_text()).group(1)
+    v["SKILL.md"] = re.search(r'version: "([^"]+)"', (ROOT / "skills/simple-korean/SKILL.md").read_text()).group(1)
     for f in (".claude-plugin/plugin.json", ".claude-plugin/marketplace.json", ".codex-plugin/plugin.json"):
         v[f] = re.search(r'"version":\s*"([^"]+)"', (ROOT / f).read_text()).group(1)
     v["README badge"] = re.search(r"badge/version-([0-9.]+)-", README).group(1)

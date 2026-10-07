@@ -12,14 +12,11 @@
   <a href="evals/results/rebuild-2026-09-02/RESULTS.md"><img src="https://img.shields.io/badge/reply_defects-%E2%88%9295%25_measured-brightgreen?style=flat" alt="95% fewer visible reply defects, measured"></a>
   <a href="evals/results/RESULTS.md"><img src="https://img.shields.io/badge/benchmarked_on-9_Claude_models-blueviolet?style=flat" alt="9 models benchmarked"></a>
   <a href="https://agentskills.io"><img src="https://img.shields.io/badge/SKILL.md-open_standard-blue?style=flat" alt="Agent Skills"></a>
-  <a href="skills/simple-english/SKILL.md"><img src="https://img.shields.io/badge/version-2.1.1-blue?style=flat" alt="version 2.1.1"></a>
+  <a href="skills/simple-korean/SKILL.md"><img src="https://img.shields.io/badge/version-2.1.1-blue?style=flat" alt="version 2.1.1"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat" alt="MIT"></a>
-  <a href="https://github.com/AminBlg/SimpleEnglish/stargazers"><img src="https://img.shields.io/github/stars/AminBlg/SimpleEnglish?style=flat&logo=github&color=yellow" alt="GitHub stars"></a>
+  <a href="https://github.com/raeperd/SimpleKorean/stargazers"><img src="https://img.shields.io/github/stars/raeperd/SimpleKorean?style=flat&logo=github&color=yellow" alt="GitHub stars"></a>
 </p>
 
-<p align="center">
-  <a href="https://trendshift.io/repositories/97933?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-97933" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/97933/daily" alt="AminBlg%2FSimpleEnglish | Trendshift" width="250" height="55"/></a>
-</p>
 
 Works in every agent that reads the [Agent Skills standard](https://agentskills.io): Claude Code, Cursor, VS Code Copilot, OpenAI Codex, Gemini CLI, Goose, OpenCode, and about 25 more. One folder, no dependencies, MIT.
 
@@ -28,31 +25,31 @@ Works in every agent that reads the [Agent Skills standard](https://agentskills.
 Any agent, with the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add AminBlg/SimpleEnglish
+npx skills add raeperd/SimpleKorean
 ```
 
-This installs the skill only. It does not install the session hook or the output style below, so setting `outputStyle` to `simple-english:simple-english` without the plugin does nothing. Use the Claude Code plugin for those.
+This installs the skill only. It does not install the session hook or the output style below, so setting `outputStyle` to `simple-korean:simple-korean` without the plugin does nothing. Use the Claude Code plugin for those.
 
 Claude Code plugin, with the session hook and the output style:
 
 ```bash
-claude plugin marketplace add AminBlg/SimpleEnglish && claude plugin install simple-english@simple-english
+claude plugin marketplace add raeperd/SimpleKorean && claude plugin install simple-korean@simple-korean
 ```
 
-The output style is named `simple-english:simple-english`. The short name does not resolve. Select it with `/config` under Output style, or put `{"outputStyle": "simple-english:simple-english"}` in `~/.claude/settings.json`.
+The output style is named `simple-korean:simple-korean`. The short name does not resolve. Select it with `/config` under Output style, or put `{"outputStyle": "simple-korean:simple-korean"}` in `~/.claude/settings.json`.
 
 Codex plugin, with the session hook:
 
 ```bash
-codex plugin marketplace add AminBlg/SimpleEnglish
-codex plugin add simple-english@simple-english
+codex plugin marketplace add raeperd/SimpleKorean
+codex plugin add simple-korean@simple-korean
 ```
 
 Codex asks you to trust the hook before its first run. The hooks need Node.js. Details in [`src/hooks/README.md`](src/hooks/README.md).
 
 No skill support? Paste the rule block of [`prompts/system-prompt.md`](prompts/system-prompt.md) into your system prompt, `AGENTS.md`, or `.cursorrules`. The page ends with a 60-token version for tight budgets.
 
-Then ask for any technical writing, or say "rewrite this with simple-english".
+Then ask for any technical writing, or say "rewrite this with simple-korean".
 
 ## See it
 
@@ -108,7 +105,7 @@ The linter history: 81.3% fewer linter violations across 9 Claude models (144 ge
 
 ## The rules
 
-Two registers in [`SKILL.md`](skills/simple-english/SKILL.md), about 1,700 tokens. The 53 numbered rules of Issue 9 live in [`rule-catalog.md`](skills/simple-english/references/rule-catalog.md) for check mode and Strict mode.
+Two registers in [`SKILL.md`](skills/simple-korean/SKILL.md), about 1,700 tokens. The 53 numbered rules of Issue 9 live in [`rule-catalog.md`](skills/simple-korean/references/rule-catalog.md) for check mode and Strict mode.
 
 The reply, every chat answer:
 
@@ -133,7 +130,7 @@ The document: docs, READMEs, runbooks, error messages, release notes:
 | No bold lead-ins, no heading over two sentences | Decoration that hides the fact |
 | State the fact, not its importance | "crucial", "robust", "not just X, it is Y" |
 
-Two modes. Plain, the default, is all of the above. Strict adds the STE dictionary discipline from [`strict-vocabulary.md`](skills/simple-english/references/strict-vocabulary.md) when you name STE, ASD-STE100, or compliance. The reply stays Plain in every mode.
+Two modes. Plain, the default, is all of the above. Strict adds the STE dictionary discipline from [`strict-vocabulary.md`](skills/simple-korean/references/strict-vocabulary.md) when you name STE, ASD-STE100, or compliance. The reply stays Plain in every mode.
 
 ## FAQ
 
@@ -145,11 +142,7 @@ Why not just prompt "write clearly"? "Clearly" is an opinion. "No sentence over 
 
 Why a 40-year-old aerospace standard? It is maintained (Issue 9, January 2025), numbered, and testable. It is also a near-perfect negative of every AI writing tell.
 
-How was it built? Against the primary Issue 9 text, not summaries. A community audit ([#4](https://github.com/AminBlg/SimpleEnglish/issues/4)) checked the vocabulary tables against the dictionary. Scenarios and recorded results: [`evals/pressure-tests.md`](evals/pressure-tests.md).
-
-## Star history
-
-[![Star History Chart](https://api.star-history.com/chart?repos=AminBlg/SimpleEnglish&type=date&legend=top-left)](https://www.star-history.com/?repos=AminBlg%2FSimpleEnglish&type=date&legend=top-left)
+How was it built? Against the primary Issue 9 text, not summaries. A community audit ([#4](https://github.com/raeperd/SimpleKorean/issues/4)) checked the vocabulary tables against the dictionary. Scenarios and recorded results: [`evals/pressure-tests.md`](evals/pressure-tests.md).
 
 ## Word-choice linter
 
