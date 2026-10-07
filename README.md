@@ -105,7 +105,7 @@ The linter history: 81.3% fewer linter violations across 9 Claude models (144 ge
 
 ## The rules
 
-Two registers in [`SKILL.md`](skills/simple-korean/SKILL.md), about 1,700 tokens. The 53 numbered rules of Issue 9 live in [`rule-catalog.md`](skills/simple-korean/references/rule-catalog.md) for check mode and Strict mode.
+Two registers in [`SKILL.md`](skills/simple-korean/SKILL.md), about 1,700 tokens.
 
 The reply, every chat answer:
 
@@ -130,7 +130,7 @@ The document: docs, READMEs, runbooks, error messages, release notes:
 | No bold lead-ins, no heading over two sentences | Decoration that hides the fact |
 | State the fact, not its importance | "crucial", "robust", "not just X, it is Y" |
 
-Two modes. Plain, the default, is all of the above. Strict adds the STE dictionary discipline from [`strict-vocabulary.md`](skills/simple-korean/references/strict-vocabulary.md) when you name STE, ASD-STE100, or compliance. The reply stays Plain in every mode.
+Two modes. Plain, the default, is all of the above. Strict adds the STE dictionary discipline when you name STE, ASD-STE100, or compliance. The reply stays Plain in every mode.
 
 ## FAQ
 
@@ -143,10 +143,6 @@ Why not just prompt "write clearly"? "Clearly" is an opinion. "No sentence over 
 Why a 40-year-old aerospace standard? It is maintained (Issue 9, January 2025), numbered, and testable. It is also a near-perfect negative of every AI writing tell.
 
 How was it built? Against the primary Issue 9 text, not summaries. A community audit ([#4](https://github.com/raeperd/SimpleKorean/issues/4)) checked the vocabulary tables against the dictionary. Scenarios and recorded results: [`evals/pressure-tests.md`](evals/pressure-tests.md).
-
-## Word-choice linter
-
-`evals/ste_lint.py` measures the mechanical rules and cannot see word choice. [`tools/ste-dictionary/`](tools/ste-dictionary/README.md) holds an extractor that builds the word lists from your own copy of the free Issue 9 PDF. A linter reads them. The repository ships the tool and no dictionary content, because the standard forbids reproduction without written authority from ASD.
 
 ## Contributing
 

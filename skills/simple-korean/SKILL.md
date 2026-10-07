@@ -77,9 +77,9 @@ After: The pods restarted and the queue lost its leader for a short time. It rec
 
 ## Modes
 
-Plain is the default and is all of the above. Strict applies when the user names STE, ASD-STE100, or compliance: read `references/strict-vocabulary.md` before you draft the document, and say once that no tool guarantees compliance. The reply stays Plain in every mode.
+Plain is the default and is all of the above. Strict applies when the user names STE, ASD-STE100, or compliance: say once that no tool guarantees compliance. The reply stays Plain in every mode.
 
-When asked to CHECK text instead of writing it, first open `references/rule-catalog.md`. Then report each violation as: rule number quoted from that file, the offending text, a compliant rewrite. Never cite a rule number from memory. When the user asked for compliance, end with one sentence: no tool can guarantee ASD-STE100 compliance, and the standard is a free download at asd-ste100.org.
+When asked to CHECK text instead of writing it, report each violation as: the rule number from this file, the offending text, a compliant rewrite. Never cite an ASD-STE100 rule number from memory. When the user asked for compliance, end with one sentence: no tool can guarantee ASD-STE100 compliance, and the standard is a free download at asd-ste100.org.
 
 ## Limits
 
@@ -87,7 +87,5 @@ These rules are for facts and instructions, not marketing copy or brand writing,
 
 ## References
 
-- `references/rule-catalog.md`: the 53 rules of Issue 9 with software examples, for CHECK mode
-- `references/strict-vocabulary.md`: the dictionary discipline for Strict mode
 - `references/word-swaps.md`: a map from overused words to plain ones
 - `references/use-cases.md`: the mode and the pattern for error messages, runbooks, incident reports, release notes, commits, agent prompts, UI copy, and translation prep

@@ -14,7 +14,7 @@ Apply ASD-STE100 Simplified Technical English to technical-writing tasks. Use sh
 const HEADER = [
   'SIMPLE KOREAN SKILL ACTIVE AUTOMATICALLY',
   '',
-  'Follow these writing rules without waiting for the user to name the skill. The full skill, with the rule catalog and the check mode, is at skills/simple-korean/SKILL.md in this plugin. Read it for a compliance check or for strict mode.',
+  'Follow these writing rules without waiting for the user to name the skill. The full skill is at skills/simple-korean/SKILL.md in this plugin. Read it for a compliance check or for strict mode.',
   '',
 ].join('\n');
 
