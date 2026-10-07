@@ -10,11 +10,12 @@
 
 <p align="center">
   <a href="https://agentskills.io"><img src="https://img.shields.io/badge/SKILL.md-open_standard-blue?style=flat" alt="Agent Skills"></a>
-  <a href="skills/simple-korean/SKILL.md"><img src="https://img.shields.io/badge/version-2.1.1-blue?style=flat" alt="version 2.1.1"></a>
+  <a href="skills/simple-korean/SKILL.md"><img src="https://img.shields.io/badge/version-0.1.0-blue?style=flat" alt="version 0.1.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat" alt="MIT"></a>
   <a href="https://github.com/raeperd/SimpleKorean/stargazers"><img src="https://img.shields.io/github/stars/raeperd/SimpleKorean?style=flat&logo=github&color=yellow" alt="GitHub stars"></a>
 </p>
 
+This repository is a fork of [AminBlg/SimpleEnglish](https://github.com/AminBlg/SimpleEnglish) that is being adapted to Korean. The rule set below is still the English one from upstream.
 
 Works in every agent that reads the [Agent Skills standard](https://agentskills.io): Claude Code, Cursor, VS Code Copilot, OpenAI Codex, Gemini CLI, Goose, OpenCode, and about 25 more. One folder, no dependencies, MIT.
 
