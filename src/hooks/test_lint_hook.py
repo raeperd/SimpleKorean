@@ -1,7 +1,7 @@
 import json, os, pathlib, subprocess, sys, tempfile
 HERE = pathlib.Path(__file__).resolve().parent
 HOOK = HERE / "lint_hook.py"
-CLEAN = {"CLAUDE_CONFIG_DIR": "/nonexistent/claude-config", "SIMPLE_ENGLISH_LINT_EXCLUDE": ""}
+CLEAN = {"CLAUDE_CONFIG_DIR": "/nonexistent/claude-config", "SIMPLE_KOREAN_LINT_EXCLUDE": ""}
 SLOP = "You should simply leverage the robust tool, making it seamless.\n"
 
 def run(event, env=None):
@@ -53,7 +53,7 @@ def test_post_tool_use_honours_the_exclude_globs():
         path = write_slop(d)
         assert run(post(path))[0] == 2
         globs = os.pathsep.join(["~/no-such-file.md", f"{d}/*.md"])
-        assert run(post(path), env={"SIMPLE_ENGLISH_LINT_EXCLUDE": globs})[0] == 0
+        assert run(post(path), env={"SIMPLE_KOREAN_LINT_EXCLUDE": globs})[0] == 0
 
 def test_post_tool_use_resolves_a_relative_path_against_the_event_cwd():
     with tempfile.TemporaryDirectory() as d:
@@ -84,7 +84,7 @@ def test_post_tool_use_matches_a_glob_through_a_symlinked_directory():
         pathlib.Path(d, "notes").symlink_to(pathlib.Path(d, "store"))
         path = str(pathlib.Path(d, "notes", "notes.md"))
         assert run(post(path))[0] == 2
-        assert run(post(path), env={"SIMPLE_ENGLISH_LINT_EXCLUDE": f"{d}/notes/*"})[0] == 0
+        assert run(post(path), env={"SIMPLE_KOREAN_LINT_EXCLUDE": f"{d}/notes/*"})[0] == 0
 
 def test_stop_flags_slop_reply_and_never_blocks():
     long = "Great question! " + "This is a robust sentence. " * 7 + "I hope this helps!"

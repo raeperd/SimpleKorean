@@ -1,22 +1,22 @@
 {
-  "name": "simple-english",
+  "name": "simple-korean",
   "owner": {
-    "name": "AminBlg",
-    "url": "https://github.com/AminBlg"
+    "name": "raeperd",
+    "url": "https://github.com/raeperd"
   },
   "description": "ASD-STE100 Simplified Technical English skill for clear, unambiguous technical writing.",
   "plugins": [
     {
-      "name": "simple-english",
+      "name": "simple-korean",
       "source": "./",
-      "displayName": "Simple English",
+      "displayName": "Simple Korean",
       "description": "Write plain, layman-readable English with the discipline of ASD-STE100 Simplified Technical English: short sentences, one word one meaning, active voice, condition before command, terms defined at first use.",
-      "version": "2.1.1",
+      "version": "0.1.0",
       "author": {
-        "name": "AminBlg"
+        "name": "raeperd"
       },
-      "homepage": "https://github.com/AminBlg/SimpleEnglish",
-      "repository": "https://github.com/AminBlg/SimpleEnglish",
+      "homepage": "https://github.com/raeperd/SimpleKorean",
+      "repository": "https://github.com/raeperd/SimpleKorean",
       "license": "MIT",
       "keywords": ["technical-writing", "documentation", "ste", "asd-ste100"]
     }

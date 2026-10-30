@@ -1,30 +1,30 @@
-# Simple English hooks
+# Simple Korean hooks
 
-The Claude Code and Codex plugins include a `SessionStart` hook. The hook loads the Simple English writing rules when a session starts, resumes, clears, or compacts. You do not need to name the skill.
+The Claude Code and Codex plugins include a `SessionStart` hook. The hook loads the Simple Korean writing rules when a session starts, resumes, clears, or compacts. You do not need to name the skill.
 
-The hook needs Node.js. Both plugins run `src/hooks/simple-english-activate.js` with the `node` command.
+The hook needs Node.js. Both plugins run `src/hooks/simple-korean-activate.js` with the `node` command.
 
 ## Install
 
 Claude Code:
 
 ```bash
-claude plugin marketplace add AminBlg/SimpleEnglish
-claude plugin install simple-english@simple-english
+claude plugin marketplace add raeperd/SimpleKorean
+claude plugin install simple-korean@simple-korean
 ```
 
 Codex:
 
 ```bash
-codex plugin marketplace add AminBlg/SimpleEnglish
-codex plugin add simple-english@simple-english
+codex plugin marketplace add raeperd/SimpleKorean
+codex plugin add simple-korean@simple-korean
 ```
 
 Codex asks you to review and trust the hook before its first run. Open `/hooks` to approve it.
 
 ## What the hook sends
 
-The hook writes the fenced rule block of `prompts/system-prompt.md` to standard output, about 3,500 characters. The page title, the paste instructions, and the word-budget variant stay out. The full skill, `skills/simple-english/SKILL.md`, is about 7,500 characters, and Claude Code caps hook output at 10,000 characters. Output over the cap goes to a file and the model gets only a preview. The condensed rules fit, and the hook names the full skill path so the model can read it for a compliance check or strict mode.
+The hook writes the fenced rule block of `prompts/system-prompt.md` to standard output, about 3,500 characters. The page title, the paste instructions, and the word-budget variant stay out. The full skill, `skills/simple-korean/SKILL.md`, is about 7,500 characters, and Claude Code caps hook output at 10,000 characters. Output over the cap goes to a file and the model gets only a preview. The condensed rules fit, and the hook names the full skill path so the model can read it for a compliance check or strict mode.
 
 Codex applies its own cap to hook context. The `additionalContextLimit: 0` setting in `.codex-plugin/hooks.json` turns off the spill-to-disk threshold. It does not remove the cap. The condensed rules fit under it.
 
@@ -40,7 +40,7 @@ If the hook cannot read the prompt file, it tries the next location. If every lo
 From the repository root:
 
 ```bash
-node --test src/hooks/simple-english-activate.test.js
+node --test src/hooks/simple-korean-activate.test.js
 ```
 
 ## Advisory writing checks (Claude Code)
@@ -58,14 +58,14 @@ The writing rules cover the documents that you write for a reader. They do not c
 
 - Every path under the Claude configuration directory. The check reads `CLAUDE_CONFIG_DIR` and falls back to `~/.claude`.
 - Every path with a `.claude` directory component, for example `my-project/.claude/agent-memory/reviewer/MEMORY.md`. A skill or a command that you write under `.claude/` is also skipped.
-- Every path that matches a glob in `SIMPLE_ENGLISH_LINT_EXCLUDE`.
+- Every path that matches a glob in `SIMPLE_KOREAN_LINT_EXCLUDE`.
 
 A symlink does not defeat a skip. The check tests the absolute path in two forms, as written and with the symlinks resolved. A match on either form is enough.
 
-`SIMPLE_ENGLISH_LINT_EXCLUDE` holds glob patterns, separated by the path separator of the platform (`:` on Linux and macOS, `;` on Windows). In a pattern, `*` also matches `/`. The check expands a leading `~` to your home directory.
+`SIMPLE_KOREAN_LINT_EXCLUDE` holds glob patterns, separated by the path separator of the platform (`:` on Linux and macOS, `;` on Windows). In a pattern, `*` also matches `/`. The check expands a leading `~` to your home directory.
 
 ```bash
-export SIMPLE_ENGLISH_LINT_EXCLUDE="$HOME/notes/*:*/CHANGELOG.md"
+export SIMPLE_KOREAN_LINT_EXCLUDE="$HOME/notes/*:*/CHANGELOG.md"
 ```
 
 To turn the file check off, set the variable to `*`. The `Stop` reply check stays on.
